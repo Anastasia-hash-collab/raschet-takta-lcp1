@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Расчет такта ЛЦП №1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.0.2/docx.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Калькулятор потока модулей</h1>
+
+  <div class="form">
+    <label>Желаемое количество модулей на выходе в сутки:
+      <input type="number" step="0.1" id="numModules" value="2" />
+    </label>
+    <label>Паллет на 1 модуль:
+      <input type="number" step="0.1" id="palletsPerModule" value="4.5" />
+    </label>
+    <label>Продолжительность смены (ч):
+      <input type="number" id="shiftHours" value="22" />
+    </label>
+    <label>Количество постов на линии:
+      <input type="number" id="numPosts" value="22" />
+    </label>
+    <label>Время в ТВО (ч):
+      <input type="number" id="tvoTime" value="9" />
+    </label>
+    <label>Магнитных бортов на 1 паллету (п.м.):
+      <input type="number" step="0.1" id="metersPerPallet" value="42" />
+    </label>
+    <button onclick="calculate()">Рассчитать</button>
+    <button onclick="downloadDocx()">Скачать результат в Word</button>
+  </div>
+
+  <div class="result" id="output"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
